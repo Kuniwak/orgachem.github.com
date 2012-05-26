@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Orga Chem works]]></title>
   <link href="http://OrgaChem.github.com/atom.xml" rel="self"/>
   <link href="http://OrgaChem.github.com/"/>
-  <updated>2012-05-26T21:49:56+09:00</updated>
+  <updated>2012-05-27T00:12:25+09:00</updated>
   <id>http://OrgaChem.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Orga Chem]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, world!]]></title>
+    <link href="http://OrgaChem.github.com/blog/2012/05/26/textile/"/>
+    <updated>2012-05-26T23:19:00+09:00</updated>
+    <id>http://OrgaChem.github.com/blog/2012/05/26/textile</id>
+    <content type="html"><![CDATA[<h1>Hello World!</h1>
+<ul>
+	<li>hello, hello my world!</li>
+	<li>This is Textile testing.</li>
+</ul>
+<table>
+	<tr>
+		<td> Table </td>
+		<td> Sample </td>
+	</tr>
+	<tr>
+		<td> Field </td>
+		<td> Sample </td>
+	</tr>
+</table>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, world!]]></title>
+    <link href="http://OrgaChem.github.com/blog/2012/05/26/hello/"/>
+    <updated>2012-05-26T23:19:00+09:00</updated>
+    <id>http://OrgaChem.github.com/blog/2012/05/26/hello</id>
+    <content type="html"><![CDATA[<h2>Hello World!</h2>
+
+<h1>Hello, hello my world!</h1>
+]]></content>
+  </entry>
   
 </feed>
