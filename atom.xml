@@ -4,7 +4,7 @@
   <title><![CDATA[Orga Chem works]]></title>
   <link href="http://OrgaChem.github.com/atom.xml" rel="self"/>
   <link href="http://OrgaChem.github.com/"/>
-  <updated>2012-05-27T00:12:25+09:00</updated>
+  <updated>2012-05-27T02:36:31+09:00</updated>
   <id>http://OrgaChem.github.com/</id>
   <author>
     <name><![CDATA[Orga Chem]]></name>
@@ -14,36 +14,297 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hello, world!]]></title>
+    <title type="html"><![CDATA[JsDoc3 Tag Reference.JP draft]]></title>
     <link href="http://OrgaChem.github.com/blog/2012/05/26/textile/"/>
     <updated>2012-05-26T23:19:00+09:00</updated>
     <id>http://OrgaChem.github.com/blog/2012/05/26/textile</id>
-    <content type="html"><![CDATA[<h1>Hello World!</h1>
-<ul>
-	<li>hello, hello my world!</li>
-	<li>This is Textile testing.</li>
-</ul>
-<table>
-	<tr>
-		<td> Table </td>
-		<td> Sample </td>
-	</tr>
-	<tr>
-		<td> Field </td>
-		<td> Sample </td>
-	</tr>
-</table>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello, world!]]></title>
-    <link href="http://OrgaChem.github.com/blog/2012/05/26/hello/"/>
-    <updated>2012-05-26T23:19:00+09:00</updated>
-    <id>http://OrgaChem.github.com/blog/2012/05/26/hello</id>
-    <content type="html"><![CDATA[<h2>Hello World!</h2>
-
-<h1>Hello, hello my world!</h1>
-]]></content>
+    <content type="html"><![CDATA[<h1>JsDoc3 タグリファレンス</h1>
+<p>とりあえず、 <a href="https://github.com/jsdoc3/jsdoc/blob/master/rhino_modules/jsdoc/tag/dictionary/definitions.js">definitions.js</a> と <a href="https://github.com/jsdoc3/jsdoc/tree/master/test/fixtures">fixtures</a> を読んでタグの詳細を調査してみた。 <code>[]</code> は省略可能、 <code>|</code> はどちらかを指定の意。</p>
+<dl>
+	<dt>@abstract, @virtual</dt>
+	<dd><pre><code>@abstract</code></pre>
+<p>抽象クラスであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@access</dt>
+	<dd><pre><code>@access [access_specifer]</code></pre>
+<p>アクセス修飾子を設定する。 <code>access_specifer</code> には <code>public</code> <code>private</code> <code>protected</code> が指定可能。それぞれ <code>private</code> タグ、 <code>protected</code> タグ、 <code>public</code> タグと記述されている場合と同じ動作。</p></dd>
+</dl>
+<dl>
+	<dt>@alias</dt>
+	<dd><pre><code>@alias name_path</code></pre>
+<p>オブジェクトの別名を指定する。</p></dd>
+</dl>
+<dl>
+	<dt>@augments, @extends</dt>
+	<dd><pre><code>@augments type|name_path</code></pre>
+<p>親オブジェクト（継承元）を示す。</p></dd>
+</dl>
+<dl>
+	<dt>@author</dt>
+	<dd><pre><code>@author author_name</code></pre>
+<p>このオブジェクトのソースコードのプログラマ情報を記載する。</p></dd>
+</dl>
+<dl>
+	<dt>@borrows</dt>
+	<dd><pre><code>@borrows name_path [" as " name_path]</code></pre>
+<p>このオブジェクトの借用元のクラスを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@class, @constructor</dt>
+	<dd><pre><code>@class [text]</code></pre>
+<p><code>new</code> 演算子が必要な関数であることを示す。 <code>new</code> 演算子が必要でない場合は <code>function</code> を使用するべき。</p></dd>
+</dl>
+<dl>
+	<dt>@classdesc</dt>
+	<dd><pre><code>@classdesc text</code></pre>
+<p>クラスの説明文を示す。</p></dd>
+</dl>
+<dl>
+	<dt>@constant, @const</dt>
+	<dd><pre><code>@constant type [text]</code></pre>
+<p>定数オブジェクトであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@constructs</dt>
+	<dd><pre><code>@constructs [name_path]</code></pre>
+<p>特殊な記法でオブジェクト（クラス）を作成していることを示す。 <a href="http://ejohn.org/blog/simple-class-instantiation/">makeClass</a> や <a href="http://www.dustindiaz.com/klass">klass</a> などの関数によってオブジェクトが作成される場合に設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@copyright</dt>
+	<dd><pre><code>@copyright text</code></pre>
+<p>著作権情報を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@default, @defaultvalue</dt>
+	<dd><pre><code>@default [value]</code></pre>
+<p>初期値を示す。 <code>value</code> には文字列・値・真偽値など設定可能。プリミティブな値であったら省略可能。省略時にノンプリミティブオブジェクトである場合は出力されないので注意が必要。</p></dd>
+</dl>
+<dl>
+	<dt>@deprecated</dt>
+	<dd><pre><code>@deprecated [text]</code></pre>
+<p>使用しないほうがよい旨を表示する。</p></dd>
+</dl>
+<dl>
+	<dt>@description, @desc</dt>
+	<dd><pre><code>@description text</code></pre>
+<p>オブジェクトの説明文を示す。タグが省略されている場合はこのタグだと見なされている。</p></dd>
+</dl>
+<dl>
+	<dt>@enum</dt>
+	<dd><pre><code>@enum [type]</code></pre>
+<p>列挙型のオブジェクトであることを示す。メンバの型を指定できる。</p></dd>
+</dl>
+<dl>
+	<dt>@event</dt>
+	<dd><pre><code>@event event_type</code></pre>
+<p>イベントを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@example</dt>
+	<dd><pre><code>@example text</code></pre>
+<p>コードの例を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@exception, @throws</dt>
+	<dd><pre><code>@exception type [text]</code></pre>
+<p>オブジェクトによって投げられる例外を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@exports</dt>
+	<dd><pre><code>@exports module_path</code></pre>
+<p>名前が保護されたオブジェクトであることを示す。たぶん <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> などの圧縮・最適化ツールによるオブジェクト名の削除・リネームから保護されていることを示すために使われる。</p></dd>
+</dl>
+<dl>
+	<dt>@external</dt>
+	<dd><pre><code>@external type|name_path</code></pre>
+<p>外部の名前空間（ライブラリ・モジュール）の参照を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@file, @fileoverview, @overview</dt>
+	<dd><pre><code>@file text</code></pre>
+<p>ソースコードファイルについての説明を示す。</p></dd>
+</dl>
+<dl>
+	<dt>@fires</dt>
+	<dd><pre><code>@fires name_path</code></pre>
+<p>発生するイベントを設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@function, @func, @method</dt>
+	<dd><pre><code>@function [name_path]</code></pre>
+<p>このオブジェクトが関数であることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@global</dt>
+	<dd><pre><code>@global </code></pre>
+<p>このオブジェクトがグローバルオブジェクトであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@ignore</dt>
+	<dd><pre><code>@ignore </code></pre>
+<p>最終的な出力には含まれないオブジェクトであることを示す。たぶん <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> などの圧縮・最適化ツールによる削除・リネームによって使用できなくなることを示すために使われる。</p></dd>
+</dl>
+<dl>
+	<dt>@inner</dt>
+	<dd><pre><code>@inner </code></pre>
+<p>オブジェクトが内部関数であると示す。</p></dd>
+</dl>
+<dl>
+	<dt>@instance</dt>
+	<dd><pre><code>@instance </code></pre>
+<p>オブジェクトがインスタンスであると示す。</p></dd>
+</dl>
+<dl>
+	<dt>@kind</dt>
+	<dd><pre><code>@kind kind</code></pre>
+<p>オブジェクトの種類を示す。</p></dd>
+</dl>
+<dl>
+	<dt>@lends</dt>
+	<dd><pre><code>@lends name_path</code></pre>
+<p>特殊な構文でクラスが作成される場合において、無面関数のメンバが指定されたクラスのメンバであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@license</dt>
+	<dd><pre><code>@license text</code></pre>
+<p>ライセンス情報を示す。</p></dd>
+</dl>
+<dl>
+	<dt>@member, @var</dt>
+	<dd><pre><code>@member [type] [text]</code></pre>
+<p>オブジェクトがメンバであると示す。</p></dd>
+</dl>
+<dl>
+	<dt>@memberof, @memberof!</dt>
+	<dd><pre><code>@memberof name_path</code></pre>
+<p>このオブジェクトの属しているオブジェクトを設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@mixes</dt>
+	<dd><pre><code>@mixes name_path</code></pre>
+<p>このオブジェクトのメンバがすべて他のオブジェクトのメンバであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@mixin</dt>
+	<dd><pre><code>@mixin </code></pre>
+<p>mix-in継承されたオブジェクトとして示す。</p></dd>
+</dl>
+<dl>
+	<dt>@module</dt>
+	<dd><pre><code>@module module_path</code></pre>
+<p>このオブジェクトがモジュールであることを示す。モジュールパスは <code>/</code> 記号区切りで記述する。</p></dd>
+</dl>
+<dl>
+	<dt>@name</dt>
+	<dd><pre><code>@name name_path</code></pre>
+<p>オブジェクトの名称を設定する。オブジェクトの名称は通常はJsDocが構文から判断しているが、特殊な構文でうまく名前が設定されない場合に使用する。</p></dd>
+</dl>
+<dl>
+	<dt>@namespace</dt>
+	<dd><pre><code>@namespace [type]</code></pre>
+<p>このオブジェクトが名前空間オブジェクトであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@param, @arguments, @arg</dt>
+	<dd><pre><code>@param [type] [name] [text]</code></pre>
+<p>この関数の引数を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@private</dt>
+	<dd><pre><code>@private </code></pre>
+<p>このオブジェクトがプライベートメンバであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@property, prop</dt>
+	<dd><pre><code>@property [type] [name] [text]</code></pre>
+<p>このオブジェクトがプロパティであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@protected</dt>
+	<dd><pre><code>@protected </code></pre>
+<p>このオブジェクトがプロテクテッドメンバであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@public</dt>
+	<dd><pre><code>@public </code></pre>
+<p>このオブジェクトがパブリックメンバであることを示す。 <code>private</code> タグ、 <code>protected</code> タグ、 <code>inner</code> タグ、 <code>access</code> タグが設定されていない場合は自動的にパブリックメンバとなっている。</p></dd>
+</dl>
+<dl>
+	<dt>@readonly</dt>
+	<dd><pre><code>@readonly </code></pre>
+<p>読込専用のオブジェクトであることを示す。</p></dd>
+</dl>
+<dl>
+	<dt>@requires</dt>
+	<dd><pre><code>@requires module_path</code></pre>
+<p>必要なライブラリやモジュールなどを設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@returns, return</dt>
+	<dd><pre><code>@returns [type] [text]</code></pre>
+<p>戻り値を設定する。通常はコンストラクタには記述しないのが普通。</p></dd>
+</dl>
+<dl>
+	<dt>@see</dt>
+	<dd><pre><code>@see name_path|uri</code></pre>
+<p>他に参照するべきオブジェクトかURIがあるときに設定する。ドキュメントにはそのオブジェクトまたはURIのリンクとして出力される。</p></dd>
+</dl>
+<dl>
+	<dt>@since</dt>
+	<dd><pre><code>@since version</code></pre>
+<p>このオブジェクトが有効になったバージョンを設定する。 <code>version</code> は <code>.</code> 区切りの数字。</p></dd>
+</dl>
+<dl>
+	<dt>@static</dt>
+	<dd><pre><code>@static static</code></pre>
+<p>このメンバが静的メンバであることを示す。通常、JsDocは自動的に静的・動的の判断をする。動作がうまくいかない場合にのみ指定すればよい。</p></dd>
+</dl>
+<dl>
+	<dt>@summary</dt>
+	<dd><pre><code>@summary text</code></pre>
+<p>説明の要約を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@this</dt>
+	<dd><pre><code>@this name_path</code></pre>
+<p><code>this</code> キーワードが示すオブジェクトを設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@todo</dt>
+	<dd><pre><code>@todo text</code></pre>
+<p>このオブジェクトについてToDo（やるべき事柄）を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@tutorial</dt>
+	<dd><pre><code>@tutorial text</code></pre>
+<p>チュートリアルを設定する。 <code>exmple</code> タグとの違いはいまいちわからない。</p></dd>
+</dl>
+<dl>
+	<dt>@type</dt>
+	<dd><pre><code>@type type|name_path</code></pre>
+<p>オブジェクトの型を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@typedef</dt>
+	<dd><pre><code>@typedef [type] [name] [text]</code></pre>
+<p>複雑なオブジェクトの型を設定する。</p></dd>
+</dl>
+<dl>
+	<dt>@undocumented</dt>
+	<dd><pre><code>@undocumented</code></pre>
+<p>このタグのつけられたオブジェクトのコメントは読込まれない。</p></dd>
+</dl>
+<dl>
+	<dt>@variation</dt>
+	<dd><pre><code>@variation variation_number</code></pre>
+<p>同名のオブジェクトがある場合の識別番号を指定する。 <code>variation_number</code> は整数。</p></dd>
+</dl>
+<dl>
+	<dt>@version</dt>
+	<dd><pre><code>@version version</code></pre>
+<p>バージョン情報を設定する。 <code>version</code> は <code>.</code> 区切りの数字。</p></dd>
+</dl>]]></content>
   </entry>
   
 </feed>

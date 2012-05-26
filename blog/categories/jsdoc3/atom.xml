@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JsDoc3 | Orga Chem works]]></title>
+  <link href="http://OrgaChem.github.com/blog/categories/jsdoc3/atom.xml" rel="self"/>
+  <link href="http://OrgaChem.github.com/"/>
+  <updated>2012-05-27T02:36:31+09:00</updated>
+  <id>http://OrgaChem.github.com/</id>
+  <author>
+    <name><![CDATA[Orga Chem]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JsDoc3 Tag Reference.JP draft]]></title>
+    <link href="http://OrgaChem.github.com/blog/2012/05/26/textile/"/>
+    <updated>2012-05-26T23:19:00+09:00</updated>
+    <id>http://OrgaChem.github.com/blog/2012/05/26/textile</id>
+    <content type="html"><![CDATA[<p>h1. JsDoc3 タグリファレンス</p>
+
+<p>とりあえず、 "definitions.js":https://github.com/jsdoc3/jsdoc/blob/master/rhino_modules/jsdoc/tag/dictionary/definitions.js と "fixtures":https://github.com/jsdoc3/jsdoc/tree/master/test/fixtures を読んでタグの詳細を調査してみた。 @[]@ は省略可能、 @|@ はどちらかを指定の意。</p>
+
+<ul>
+<li>@abstract, @virtual :=
+bc. @abstract</li>
+</ul>
+
+
+<p>抽象クラスであることを示す。 =:</p>
+
+<ul>
+<li>@access :=
+bc. @access [access_specifer]</li>
+</ul>
+
+
+<p>アクセス修飾子を設定する。 @access_specifer@ には @public@ @private@ @protected@ が指定可能。それぞれ @private@ タグ、 @protected@ タグ、 @public@ タグと記述されている場合と同じ動作。 =:</p>
+
+<ul>
+<li>@alias :=
+bc. @alias name_path</li>
+</ul>
+
+
+<p>オブジェクトの別名を指定する。 =:</p>
+
+<ul>
+<li>@augments, @extends :=
+bc. @augments type|name_path</li>
+</ul>
+
+
+<p>親オブジェクト（継承元）を示す。 =:</p>
+
+<ul>
+<li>@author :=
+bc. @author author_name</li>
+</ul>
+
+
+<p>このオブジェクトのソースコードのプログラマ情報を記載する。 =:</p>
+
+<ul>
+<li>@borrows :=
+bc. @borrows name_path [" as " name_path]</li>
+</ul>
+
+
+<p>このオブジェクトの借用元のクラスを示す。 =:</p>
+
+<ul>
+<li>@class, @constructor :=
+bc. @class [text]</li>
+</ul>
+
+
+<p>@new@ 演算子が必要な関数であることを示す。 @new@ 演算子が必要でない場合は @function@ を使用するべき。 =:</p>
+
+<ul>
+<li>@classdesc :=
+bc. @classdesc text</li>
+</ul>
+
+
+<p>クラスの説明文を示す。 =:</p>
+
+<ul>
+<li>@constant, @const :=
+bc. @constant type [text]</li>
+</ul>
+
+
+<p>定数オブジェクトであることを示す。 =:</p>
+
+<ul>
+<li>@constructs :=
+bc. @constructs [name_path]</li>
+</ul>
+
+
+<p>特殊な記法でオブジェクト（クラス）を作成していることを示す。 "makeClass":http://ejohn.org/blog/simple-class-instantiation/ や "klass":http://www.dustindiaz.com/klass などの関数によってオブジェクトが作成される場合に設定する。 =:</p>
+
+<ul>
+<li>@copyright :=
+bc. @copyright text</li>
+</ul>
+
+
+<p>著作権情報を設定する。 =:</p>
+
+<ul>
+<li>@default, @defaultvalue :=
+bc. @default [value]</li>
+</ul>
+
+
+<p>初期値を示す。 @value@ には文字列・値・真偽値など設定可能。プリミティブな値であったら省略可能。省略時にノンプリミティブオブジェクトである場合は出力されないので注意が必要。 =:</p>
+
+<ul>
+<li>@deprecated :=
+bc. @deprecated [text]</li>
+</ul>
+
+
+<p>使用しないほうがよい旨を表示する。 =:</p>
+
+<ul>
+<li>@description, @desc :=
+bc. @description text</li>
+</ul>
+
+
+<p>オブジェクトの説明文を示す。タグが省略されている場合はこのタグだと見なされている。 =:</p>
+
+<ul>
+<li>@enum :=
+bc. @enum [type]</li>
+</ul>
+
+
+<p>列挙型のオブジェクトであることを示す。メンバの型を指定できる。 =:</p>
+
+<ul>
+<li>@event :=
+bc. @event event_type</li>
+</ul>
+
+
+<p>イベントを示す。 =:</p>
+
+<ul>
+<li>@example :=
+bc. @example text</li>
+</ul>
+
+
+<p>コードの例を設定する。 =:</p>
+
+<ul>
+<li>@exception, @throws :=
+bc. @exception type [text]</li>
+</ul>
+
+
+<p>オブジェクトによって投げられる例外を設定する。 =:</p>
+
+<ul>
+<li>@exports :=
+bc. @exports module_path</li>
+</ul>
+
+
+<p>名前が保護されたオブジェクトであることを示す。たぶん "Closure Compiler":https://developers.google.com/closure/compiler/ などの圧縮・最適化ツールによるオブジェクト名の削除・リネームから保護されていることを示すために使われる。 =:</p>
+
+<ul>
+<li>@external :=
+bc. @external type|name_path</li>
+</ul>
+
+
+<p>外部の名前空間（ライブラリ・モジュール）の参照を設定する。 =:</p>
+
+<ul>
+<li>@file, @fileoverview, @overview :=
+bc. @file text</li>
+</ul>
+
+
+<p>ソースコードファイルについての説明を示す。 =:</p>
+
+<ul>
+<li>@fires :=
+bc. @fires name_path</li>
+</ul>
+
+
+<p>発生するイベントを設定する。 =:</p>
+
+<ul>
+<li>@function, @func, @method :=
+bc. @function [name_path]</li>
+</ul>
+
+
+<p>このオブジェクトが関数であることを示す。 =:</p>
+
+<ul>
+<li>@global :=
+bc. @global</li>
+</ul>
+
+
+<p>このオブジェクトがグローバルオブジェクトであることを示す。 =:</p>
+
+<ul>
+<li>@ignore :=
+bc. @ignore</li>
+</ul>
+
+
+<p>最終的な出力には含まれないオブジェクトであることを示す。たぶん "Closure Compiler":https://developers.google.com/closure/compiler/ などの圧縮・最適化ツールによる削除・リネームによって使用できなくなることを示すために使われる。 =:</p>
+
+<ul>
+<li>@inner :=
+bc. @inner</li>
+</ul>
+
+
+<p>オブジェクトが内部関数であると示す。 =:</p>
+
+<ul>
+<li>@instance :=
+bc. @instance</li>
+</ul>
+
+
+<p>オブジェクトがインスタンスであると示す。 =:</p>
+
+<ul>
+<li>@kind :=
+bc. @kind kind</li>
+</ul>
+
+
+<p>オブジェクトの種類を示す。 =:</p>
+
+<ul>
+<li>@lends :=
+bc. @lends name_path</li>
+</ul>
+
+
+<p>特殊な構文でクラスが作成される場合において、無面関数のメンバが指定されたクラスのメンバであることを示す。 =:</p>
+
+<ul>
+<li>@license :=
+bc. @license text</li>
+</ul>
+
+
+<p>ライセンス情報を示す。 =:</p>
+
+<ul>
+<li>@member, @var :=
+bc. @member [type] [text]</li>
+</ul>
+
+
+<p>オブジェクトがメンバであると示す。 =:</p>
+
+<ul>
+<li>@memberof, @memberof! :=
+bc. @memberof name_path</li>
+</ul>
+
+
+<p>このオブジェクトの属しているオブジェクトを設定する。 =:</p>
+
+<ul>
+<li>@mixes :=
+bc. @mixes name_path</li>
+</ul>
+
+
+<p>このオブジェクトのメンバがすべて他のオブジェクトのメンバであることを示す。 =:</p>
+
+<ul>
+<li>@mixin :=
+bc. @mixin</li>
+</ul>
+
+
+<p>mix-in継承されたオブジェクトとして示す。 =:</p>
+
+<ul>
+<li>@module :=
+bc. @module module_path</li>
+</ul>
+
+
+<p>このオブジェクトがモジュールであることを示す。モジュールパスは @/@ 記号区切りで記述する。 =:</p>
+
+<ul>
+<li>@name :=
+bc. @name name_path</li>
+</ul>
+
+
+<p>オブジェクトの名称を設定する。オブジェクトの名称は通常はJsDocが構文から判断しているが、特殊な構文でうまく名前が設定されない場合に使用する。 =:</p>
+
+<ul>
+<li>@namespace :=
+bc. @namespace [type]</li>
+</ul>
+
+
+<p>このオブジェクトが名前空間オブジェクトであることを示す。 =:</p>
+
+<ul>
+<li>@param, @arguments, @arg :=
+bc. @param [type] [name] [text]</li>
+</ul>
+
+
+<p>この関数の引数を設定する。 =:</p>
+
+<ul>
+<li>@private :=
+bc. @private</li>
+</ul>
+
+
+<p>このオブジェクトがプライベートメンバであることを示す。 =:</p>
+
+<ul>
+<li>@property, prop :=
+bc. @property [type] [name] [text]</li>
+</ul>
+
+
+<p>このオブジェクトがプロパティであることを示す。 =:</p>
+
+<ul>
+<li>@protected :=
+bc. @protected</li>
+</ul>
+
+
+<p>このオブジェクトがプロテクテッドメンバであることを示す。 =:</p>
+
+<ul>
+<li>@public :=
+bc. @public</li>
+</ul>
+
+
+<p>このオブジェクトがパブリックメンバであることを示す。 @private@ タグ、 @protected@ タグ、 @inner@ タグ、 @access@ タグが設定されていない場合は自動的にパブリックメンバとなっている。 =:</p>
+
+<ul>
+<li>@readonly :=
+bc. @readonly</li>
+</ul>
+
+
+<p>読込専用のオブジェクトであることを示す。 =:</p>
+
+<ul>
+<li>@requires :=
+bc. @requires module_path</li>
+</ul>
+
+
+<p>必要なライブラリやモジュールなどを設定する。 =:</p>
+
+<ul>
+<li>@returns, return :=
+bc. @returns [type] [text]</li>
+</ul>
+
+
+<p>戻り値を設定する。通常はコンストラクタには記述しないのが普通。 =:</p>
+
+<ul>
+<li>@see :=
+bc. @see name_path|uri</li>
+</ul>
+
+
+<p>他に参照するべきオブジェクトかURIがあるときに設定する。ドキュメントにはそのオブジェクトまたはURIのリンクとして出力される。 =:</p>
+
+<ul>
+<li>@since :=
+bc. @since version</li>
+</ul>
+
+
+<p>このオブジェクトが有効になったバージョンを設定する。 @version@ は @.@ 区切りの数字。 =:</p>
+
+<ul>
+<li>@static :=
+bc. @static static</li>
+</ul>
+
+
+<p>このメンバが静的メンバであることを示す。通常、JsDocは自動的に静的・動的の判断をする。動作がうまくいかない場合にのみ指定すればよい。 =:</p>
+
+<ul>
+<li>@summary :=
+bc. @summary text</li>
+</ul>
+
+
+<p>説明の要約を設定する。 =:</p>
+
+<ul>
+<li>@this :=
+bc. @this name_path</li>
+</ul>
+
+
+<p>@this@ キーワードが示すオブジェクトを設定する。 =:</p>
+
+<ul>
+<li>@todo :=
+bc. @todo text</li>
+</ul>
+
+
+<p>このオブジェクトについてToDo（やるべき事柄）を設定する。 =:</p>
+
+<ul>
+<li>@tutorial :=
+bc. @tutorial text</li>
+</ul>
+
+
+<p>チュートリアルを設定する。 @exmple@ タグとの違いはいまいちわからない。 =:</p>
+
+<ul>
+<li>@type :=
+bc. @type type|name_path</li>
+</ul>
+
+
+<p>オブジェクトの型を設定する。 =:</p>
+
+<ul>
+<li>@typedef :=
+bc. @typedef [type] [name] [text]</li>
+</ul>
+
+
+<p>複雑なオブジェクトの型を設定する。 =:</p>
+
+<ul>
+<li>@undocumented :=
+bc. @undocumented</li>
+</ul>
+
+
+<p>このタグのつけられたオブジェクトのコメントは読込まれない。 =:</p>
+
+<ul>
+<li>@variation :=
+bc. @variation variation_number</li>
+</ul>
+
+
+<p>同名のオブジェクトがある場合の識別番号を指定する。 @variation_number@ は整数。 =:</p>
+
+<ul>
+<li>@version :=
+bc. @version version</li>
+</ul>
+
+
+<p>バージョン情報を設定する。 @version@ は @.@ 区切りの数字。 =:</p>
+]]></content>
+  </entry>
+  
+</feed>
