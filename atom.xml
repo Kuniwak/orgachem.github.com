@@ -4,7 +4,7 @@
   <title><![CDATA[Orga Chem works]]></title>
   <link href="http://OrgaChem.github.com/atom.xml" rel="self"/>
   <link href="http://OrgaChem.github.com/"/>
-  <updated>2012-05-27T07:51:30+09:00</updated>
+  <updated>2012-05-27T17:39:29+09:00</updated>
   <id>http://OrgaChem.github.com/</id>
   <author>
     <name><![CDATA[Orga Chem]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[jsdoc2-template-bootstrap: Fix bugs]]></title>
+    <link href="http://OrgaChem.github.com/blog/2012/05/27/jsdoc2-template-bootstrap-fix-bugs/"/>
+    <updated>2012-05-27T17:38:00+09:00</updated>
+    <id>http://OrgaChem.github.com/blog/2012/05/27/jsdoc2-template-bootstrap-fix-bugs</id>
+    <content type="html"><![CDATA[<p>やっと…やっと一息つけた…
+プラグイン関係のバグがあったので修正。
+Readmeにも記載ずみ。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JsDoc2-template-bootstrap: First release]]></title>
