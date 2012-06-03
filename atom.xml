@@ -4,7 +4,7 @@
   <title><![CDATA[Orga Chem works]]></title>
   <link href="http://OrgaChem.github.com/atom.xml" rel="self"/>
   <link href="http://OrgaChem.github.com/"/>
-  <updated>2012-05-27T17:44:54+09:00</updated>
+  <updated>2012-06-04T05:04:50+09:00</updated>
   <id>http://OrgaChem.github.com/</id>
   <author>
     <name><![CDATA[Orga Chem]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ClosureLibWiki: Release]]></title>
+    <link href="http://OrgaChem.github.com/blog/2012/06/04/closurelibwiki-release/"/>
+    <updated>2012-06-04T05:01:00+09:00</updated>
+    <id>http://OrgaChem.github.com/blog/2012/06/04/closurelibwiki-release</id>
+    <content type="html"><![CDATA[<p>Closure Library の解説 Wiki <a href="https://sites.google.com/site/closurelibwiki/docs">I ♥ Closure Library</a> をはじめました。API ドキュメントの邦訳プロジェクトが目玉です。協力者募集中！！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JsDoc3 Reference JP: Wiki created]]></title>
